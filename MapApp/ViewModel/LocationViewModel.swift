@@ -11,7 +11,7 @@ import MapKit
 class LocationViewModel: ObservableObject {
     
     // All loaded locations
-    @Published var locations: [Location] = []
+    @Published var locations: [Location]
     
     // Current location on map
     @Published var mapLocation: Location {
@@ -54,6 +54,23 @@ class LocationViewModel: ObservableObject {
             mapLocation = location
             showLocationsList = false
         }
+    }
+    
+    func nextButtoPressed() {
+        guard let currentIndex = locations.firstIndex(where: { $0 == mapLocation }) else {
+            print("Couldn't find current index in locations array! Should never happen.")
+            return
+        }
+        
+        let nextIndex = currentIndex + 1
+        guard locations.indices.contains(nextIndex) else {
+            guard let firstLocation = locations.first else { return }
+            showNextLocation(location: firstLocation)
+            return
+        }
+        
+        let nextLocation = locations[nextIndex]
+        showNextLocation(location: nextLocation)
     }
     
 }
