@@ -17,6 +17,7 @@
 		51635A892C0086B500956E42 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635A882C0086B500956E42 /* LocationViewModel.swift */; };
 		51635A8B2C008F4300956E42 /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635A8A2C008F4300956E42 /* LocationListView.swift */; };
 		51635A8D2C00997800956E42 /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635A8C2C00997800956E42 /* LocationPreviewView.swift */; };
+		51635A8F2C0491E500956E42 /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51635A8E2C0491E500956E42 /* LocationMapAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		51635A882C0086B500956E42 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		51635A8A2C008F4300956E42 /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 		51635A8C2C00997800956E42 /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
+		51635A8E2C0491E500956E42 /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				51635A862C00846C00956E42 /* LocationsView.swift */,
 				51635A8A2C008F4300956E42 /* LocationListView.swift */,
 				51635A8C2C00997800956E42 /* LocationPreviewView.swift */,
+				51635A8E2C0491E500956E42 /* LocationMapAnnotationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51635A852C0080B800956E42 /* LocationsDataService.swift in Sources */,
+				51635A8F2C0491E500956E42 /* LocationMapAnnotationView.swift in Sources */,
 				51635A892C0086B500956E42 /* LocationViewModel.swift in Sources */,
 				51635A8D2C00997800956E42 /* LocationPreviewView.swift in Sources */,
 				51635A712C004F7900956E42 /* ContentView.swift in Sources */,
