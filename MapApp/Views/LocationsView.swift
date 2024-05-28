@@ -25,6 +25,9 @@ struct LocationsView: View {
                 locationPreviewStack
             }
         }
+        .sheet(item: $viewModel.sheetLocation, onDismiss: nil) { location in
+            LocationDetailView(location: location)
+        }
     }
 }
 
@@ -60,18 +63,18 @@ extension LocationsView {
     }
     
     private var mapLayer: some View {
-        Map(coordinateRegion: $viewModel.mapRegion,
-            annotationItems: viewModel.locations,
-            annotationContent: { location in
-            MapAnnotation(coordinate: location.coordinates) {
-                LocationMapAnnotationView()
-                    .scaleEffect(viewModel.mapLocation == location ? 1 : 0.7)
-                    .shadow(radius: 10)
-                    .onTapGesture {
-                        viewModel.showNextLocation(location: location)
-                    }
+        Map(position: $viewModel.region) {
+            ForEach(viewModel.locations) { location in
+                Annotation("", coordinate: location.coordinates) {
+                    LocationMapAnnotationView()
+                        .scaleEffect(viewModel.mapLocation == location ? 1 : 0.7)
+                        .shadow(radius: 10)
+                        .onTapGesture {
+                            viewModel.showNextLocation(location: location)
+                        }
+                }
             }
-        })
+        }
     }
     
     private var locationPreviewStack: some View {
