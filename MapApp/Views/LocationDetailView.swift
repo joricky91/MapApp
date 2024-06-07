@@ -50,7 +50,7 @@ extension LocationDetailView {
                 Image(image)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width)
+                    .frame(width: UIDevice.current.userInterfaceIdiom == .pad ? nil : UIScreen.main.bounds.width)
                     .clipped()
             }
         }
@@ -103,7 +103,7 @@ extension LocationDetailView {
             Image(systemName: "xmark")
                 .font(.headline)
                 .padding()
-                .foregroundStyle(.black)
+                .foregroundStyle(Color.primary)
                 .background(.thickMaterial)
                 .cornerRadius(10)
                 .shadow(radius: 4)
