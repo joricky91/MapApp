@@ -24,6 +24,7 @@ class LocationViewModel: ObservableObject {
     @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
     let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     @Published var region: MapCameraPosition = .region(MKCoordinateRegion())
+    @Published var selectedRegion: MapCameraPosition = .region(MKCoordinateRegion())
     
     // Show list of locations
     @Published var showLocationsList: Bool = false
@@ -45,6 +46,7 @@ class LocationViewModel: ObservableObject {
                 center: location.coordinates,
                 span: mapSpan)
             region = .region(mapRegion)
+            selectedRegion = .region(MKCoordinateRegion(center: location.coordinates, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)))
         }
     }
     
